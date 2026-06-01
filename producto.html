@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetConnect - Detalles del Producto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container" onclick="window.location.href='index.html'" style="cursor: pointer;">
+            <img src="petconnectlogo.png" alt="Logo de PetConnect" class="logo-image">
+        </div>
+        
+        <div class="cart-icon" onclick="toggleCarrito()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar en la tienda...">
+            <button onclick="buscarProducto()"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <main class="product-container">
+        <div class="product-image">
+            <img src="balsamo1.png" alt="Bálsamo para huellitas y nariz">
+        </div>
+        <div class="product-info">
+            <span class="badge">Información Detallada</span>
+            <h1>Bálsamo Humectante para Huellitas y Nariz</h1>
+            <p class="price">$65.00 MXN</p>
+            
+            <h3>Beneficios Clave</h3>
+            <p class="description">
+                Este bálsamo crea una barrera nutritiva y protectora que ayuda a sanar grietas, resequedad severa y asperezas causadas por el pavimento caliente, el frío o el suelo rugoso.
+            </p>
+
+            <h3>Ingredientes 100% Orgánicos</h3>
+            <p class="description">
+                Formulado artesanalmente con manteca de cacao pura, aceite de coco orgánico y cera de abeja natural. Libre de químicos, conservadores y fragancias artificiales, garantizando que sea completamente seguro y comestible si tu mascota llega a lamerse la zona.
+            </p>
+
+            <h3>Modo de Uso</h3>
+            <p class="description">
+                Aplica suavemente una capa delgada sobre las almohadillas limpias y secas o en la nariz de tu perrito. Se recomienda usarlo por las noches antes de dormir para permitir una absorción profunda y óptima.
+            </p>
+
+            <div class="actions" style="margin-top: 30px;">
+                <button class="btn-add" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+                <button class="btn-buy" onclick="comprarAhora()">Comprar Ahora</button>
+                <button class="btn-add" onclick="window.location.href='index.html'" style="margin-left: 10px;">Volver al Inicio</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="shopping-cart" class="cart-modal hidden">
+        <h3>Tu Carrito - PetConnect</h3>
+        <div id="cart-items">
+            <p>El carrito está vacío.</p>
+        </div>
+        <div id="paypal-button-container" style="margin-top: 20px;"></div>
+    </div>
+
+    <div class="floating-buttons">
+        <a href="https://instagram.com/huellitasfelices714" target="_blank" class="btn-instagram">
+            <i class="fab fa-instagram"></i> @huellitasfelices714
+        </a>
+        <button class="btn-ai" onclick="toggleAIChat()">
+            <i class="fas fa-robot"></i> Asistente IA
+        </button>
+    </div>
+
+    <div id="ai-chat-window" class="ai-window hidden">
+        <div class="ai-header">
+            <span>🐾 PetBot - Asistente PetConnect</span>
+            <button onclick="toggleAIChat()">&times;</button>
+        </div>
+        <div class="ai-body" id="aiBody">
+            <p class="bot-msg">¡Hola! Soy PetBot. ¿Tienes dudas sobre los ingredientes o el uso de nuestro bálsamo en PetConnect?</p>
+        </div>
+        <div class="ai-footer">
+            <input type="text" id="aiInput" placeholder="Pregúntame algo...">
+            <button onclick="enviarMensajeIA()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=MXN"></script>
+    <script src="script.js"></script>
+</body>
+</html>

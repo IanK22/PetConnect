@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetConnect - Bálsamo Natural para Perritos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="petconnectlogo.png" alt="Logo de PetConnect" class="logo-image">
+        </div>
+        
+        <div class="cart-icon" onclick="toggleCarrito()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar en la tienda...">
+            <button onclick="buscarProducto()"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <div class="moving-border">
+        <div class="moving-text">
+            🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥
+        </div>
+    </div>
+
+    <main class="product-container">
+        <div class="product-image clickable-product" onclick="irAProducto()">
+            <img src="Balsamo1.png" alt="Bálsamo para huellitas y nariz">
+        </div>
+        <div class="product-info">
+            <span class="badge">¡100% Natural!</span>
+            <h1 class="clickable-product" onclick="irAProducto()">Bálsamo Humectante para Huellitas y Nariz</h1>
+            <p class="price">$65.00 MXN</p>
+            <p class="description">
+                Protege, hidrata y repara las almohadillas y la nariz de tu mejor amigo. 
+                Hecho a mano con ingredientes seguros que no le harán daño si se lame.
+            </p>
+            <div class="actions">
+                <button class="btn-add" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+                <button class="btn-buy" onclick="comprarAhora()">Comprar Ahora</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="moving-border">
+        <div class="moving-text reverse">
+            🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥 EN VENTA 🐾 EN VENTA 🔥
+        </div>
+    </div>
+
+    <section class="catalog-section">
+        <h2>Catálogo de Productos</h2>
+        <div class="products-grid">
+            
+            <div class="grid-card active-product">
+                <div class="clickable-product" onclick="irAProducto()">
+                    <img src="Balsamo2.png" alt="Bálsamo estrella">
+                    <h3>Bálsamo para Huellitas</h3>
+                </div>
+                <p class="grid-price">$65.00 MXN</p>
+                <button class="btn-grid-add" onclick="agregarAlCarrito()">Agregar</button>
+            </div>
+
+            <div class="grid-card upcoming-product" onclick="verProximoProducto()">
+                <div class="upcoming-badge">Próximamente</div>
+                <div class="mystery-box">?</div>
+                <h3>Próximamente</h3>
+                <p class="grid-price">--.--</p>
+            </div>
+
+            <div class="grid-card upcoming-product" onclick="verProximoProducto()">
+                <div class="upcoming-badge">Próximamente</div>
+                <div class="mystery-box">?</div>
+                <h3>Próximamente</h3>
+                <p class="grid-price">--.--</p>
+            </div>
+
+            <div class="grid-card upcoming-product" onclick="verProximoProducto()">
+                <div class="upcoming-badge">Próximamente</div>
+                <div class="mystery-box">?</div>
+                <h3>Próximamente</h3>
+                <p class="grid-price">--.--</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="shopping-cart" class="cart-modal hidden">
+        <h3>Tu Carrito - PetConnect</h3>
+        <div id="cart-items">
+            <p>El carrito está vacío.</p>
+        </div>
+        <div id="paypal-button-container" style="margin-top: 20px;"></div>
+    </div>
+
+    <div class="floating-buttons">
+        <a href="https://instagram.com/huellitasfelices714" target="_blank" class="btn-instagram">
+            <i class="fab fa-instagram"></i> @huellitasfelices714
+        </a>
+        <button class="btn-ai" onclick="toggleAIChat()">
+            <i class="fas fa-robot"></i> Asistente IA
+        </button>
+    </div>
+
+    <div id="ai-chat-window" class="ai-window hidden">
+        <div class="ai-header">
+            <span>🐾 PetBot - Asistente PetConnect</span>
+            <button onclick="toggleAIChat()">&times;</button>
+        </div>
+        <div class="ai-body" id="aiBody">
+            <p class="bot-msg">¡Hola! Soy PetBot. ¿Tienes dudas sobre los ingredientes o el uso de nuestro bálsamo en PetConnect?</p>
+        </div>
+        <div class="ai-footer">
+            <input type="text" id="aiInput" placeholder="Pregúntame algo...">
+            <button onclick="enviarMensajeIA()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=MXN"></script>
+    <script src="script.js"></script>
+</body>
+</html>
